@@ -1,0 +1,22 @@
+<div class='row'>
+    <div class='col s12 center-align'>
+        <h3>Student Directory</h3>
+    </div>
+</div>
+
+<div class="row">
+    <% @students.each do |s| %>
+        <div class="col s6 m6">
+            <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <span class="card-title">Name: <%=s.name%></span>
+                <p>Email: <%=s.email%></p>
+                <p>Course Enrollments:</p>
+            </div>
+            <div class="card-action">
+                <%= link_to "View profile", student_path(s) %>
+            </div>
+            </div>
+        </div>
+    <%end%>
+</div>

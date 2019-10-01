@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row center sign-up-form">
+        <div class="row center">
+            <div class="col s12 m12 l12">
+                <div class="card-panel">
+                    <%# if @student instance variable is a new record ? then :  %>
+                    <h3>Login</h3>
+                    <div class="row"> 
+                    <%# model backed forms allow grabbing database object based on the id of the student %>
+                        <%= form_for(:logins, html: {class: "col s12"}) do |f| %>
+                        
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                    <%= f.text_field :email, placeholder: "Email", autofocus: true %>
+                                    <%= f.label :email %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                    <%= f.password_field :password, placeholder: "Enter your password", autofocus: true %>
+                                    <%= f.label :password, class: "active" %>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                <%# if @student instance variable is a new record %>
+                                <%# if is new record show sign up OTHERWISE ? show : submit changes %>
+                                    <%= f.button '<i class="material-icons right">arrow_forward</i>Log In'.html_safe , class: "btn light-blue waves-effect waves-light right" %>
+                                </div>
+                            </div>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
