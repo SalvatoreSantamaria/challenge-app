@@ -1,4 +1,4 @@
-<h1>This is the new course page</h1>
+<h1>Create a new challenge!</h1>
 
 <%# have to specify what obj is (for the shared errors partial) REMOVED %>
 
@@ -16,6 +16,13 @@
                                 <div class= "input-field col s12">
                                     <%= f.text_field :name, placeholder: "Challenge Title", autofocus: true %>
                                     <%= f.label :name, class: "active" %>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class= "input-field col s12">
+                                    <%= f.number_field :challenge_points, placeholder: "Challenge Points", autofocus: true %>
+                                    <%= f.label :challenge_points, class: "active" %>
                                 </div>
                             </div>
 

@@ -13,7 +13,6 @@ class CoursesController < ApplicationController #courses controller inheriting f
     def edit
     end
 
-
     def create
         @course = Course.new(course_params)
         if @course.save
@@ -25,10 +24,15 @@ class CoursesController < ApplicationController #courses controller inheriting f
         end
     end
 
+    #working on adding totals to challenges
+    def add_points
+        #@points = 
+    end
+
     private
 
     def course_params
-        params.require(:course).permit(:name) #this will whitelist what we receive for the web form, name and email
+        params.require(:course).permit(:name, :challenge_points) #this will whitelist what we receive for the web form, name and email
     end
 
 end

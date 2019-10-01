@@ -12,6 +12,11 @@
                 <span class="card-title"><%=course.name%></span>
                 <%# <p><%=course.description%></p> 
             </div>
+            <div>
+                Team One Completed? <%=course.team_one_completed%>
+                Team Two Completed? <%=course.team_two_completed%>
+                Challenge Points: <%=course.challenge_points%>
+            </div>
             <div class="card-action">
                 <%# #if logged_in and the current user already is enrolled in the course %>
                 <% if logged_in? && !(current_user.courses.include?(course))%> 

@@ -10,12 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_29_155342) do
+ActiveRecord::Schema.define(version: 2019_10_01_150409) do
 
   create_table "courses", force: :cascade do |t|
     t.string "short_name"
     t.string "name"
     t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "team_one_completed"
+    t.boolean "team_two_completed"
+    t.integer "team_one_points_total"
+    t.integer "team_two_points_total"
+    t.integer "challenge_points"
+  end
+
+  create_table "points", force: :cascade do |t|
+    t.integer "team_one_points_total"
+    t.integer "team_two_points_total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
