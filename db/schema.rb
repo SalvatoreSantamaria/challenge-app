@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_151210) do
+ActiveRecord::Schema.define(version: 2019_10_02_160515) do
 
   create_table "courses", force: :cascade do |t|
     t.string "short_name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_151210) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.integer "score_id"
   end
 
   create_table "teams", force: :cascade do |t|

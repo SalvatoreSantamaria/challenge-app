@@ -8,9 +8,22 @@ class StudentCoursesController < ApplicationController
 
 
             #how to add point total?
-            #I need to find the course.team, which doesn't exist
+            #do I need to find the course.team, which doesn't exist?
             #team = Course.find(params[:team_id]) #do I need to create :team_id? it does not exist
+
+            #current users challenge,
+            #current_user.courses.student_id 
+
+            #table is score, score.team_score stores the points, and student_id: 1 is team_one and student_id: 2 is team_two
             #probably need to use .update()
+            student = Student.where(id: current_user.id)
+            student.scores.find(2).team_score #hard coding to test
+            puts student.scores.find(2).team_score 
+
+
+            #in db, student.scores = nil
+            #hm, its going to be somthing like student.scores.team_score
+
             #
             #something here that added the points?
             flash[:notice] = "You have successfully completed #{course_to_add.name}"

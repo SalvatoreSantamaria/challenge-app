@@ -12,6 +12,7 @@ class Student < ApplicationRecord
     has_many :courses, through: :student_courses #link that connects in model - give a relation with course, but not directly, through student_courses
     
     
-    belongs_to :scores #this means student is the many side of a one to many association
+    #belongs_to :scores #this means student is the many side of a one to many association. i think this needs to be many to many, so changing to below
+    has_many :scores
     validates :student_id, presence: true #ensures that a student id is present
 end
