@@ -21,9 +21,9 @@
                 <%# #if logged_in and the current user already is enrolled in the course %>
                 <% if logged_in? && !(current_user.courses.include?(course))%> 
                 <%# have to specify method post (not using a form for helper) %>
-                    <%= link_to "Enroll", course_enroll_path(course_id: course.id), method: :post %> <%# passing in course_id param (one of the keys in the params hash) and the value of the id of the course%>
+                    <%= link_to "Complete", course_enroll_path(course_id: course.id), method: :post %> <%# passing in course_id param (one of the keys in the params hash) and the value of the id of the course%>
                 <% end %>
-                    <a href="#">Complete</a>
+                    <%# <a href="#">Complete</a> %>
                     <%# <%= link_to 'download via link_to', 'file.txt', download: '' %>
                     <%# <a href="file.txt" download>Download via a href</a> %>
                     <%# <%= link_to "download with download_pdf_path", download_pdf_path %>
