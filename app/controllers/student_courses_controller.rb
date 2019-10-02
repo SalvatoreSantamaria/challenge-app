@@ -6,9 +6,10 @@ class StudentCoursesController < ApplicationController
             StudentCourse.create(course: course_to_add, student: current_user)#rails will extract id from here and use to in the association
 
             #how to add point total?
-            StudentCourse.create(course: course_to_add, student: current_user) #this needs to add the points. they need to be added to ____? i think their own model?
-            #Team.create(something here that added the points?)
-
+            #I need to find the course.team, which doesn't exist
+            #team = Course.find(params[:team_id]) #do I need to create :team_id? it does not exist
+            #
+            #something here that added the points?
             flash[:notice] = "You have successfully completed #{course_to_add.name}"
             redirect_to current_user
         else  

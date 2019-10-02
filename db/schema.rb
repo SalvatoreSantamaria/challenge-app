@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_02_000021) do
+ActiveRecord::Schema.define(version: 2019_10_02_042153) do
 
   create_table "courses", force: :cascade do |t|
     t.string "short_name"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 2019_10_02_000021) do
   create_table "points", force: :cascade do |t|
     t.integer "team_one_points_total"
     t.integer "team_two_points_total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "scores", force: :cascade do |t|
+    t.integer "team_one"
+    t.integer "team_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
