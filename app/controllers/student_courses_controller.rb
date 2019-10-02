@@ -4,10 +4,13 @@ class StudentCoursesController < ApplicationController
         unless current_user.courses.include?(course_to_add)#create association only ifcurrent user isnt already enrolled in couse
             #i think this is just creating the relationship.
             StudentCourse.create(course: course_to_add, student: current_user)#rails will extract id from here and use to in the association
+            #create will hit the db directly
+
 
             #how to add point total?
             #I need to find the course.team, which doesn't exist
             #team = Course.find(params[:team_id]) #do I need to create :team_id? it does not exist
+            #probably need to use .update()
             #
             #something here that added the points?
             flash[:notice] = "You have successfully completed #{course_to_add.name}"
