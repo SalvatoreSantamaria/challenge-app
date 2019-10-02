@@ -16,11 +16,11 @@ class StudentCoursesController < ApplicationController
 
             #table is score, score.team_score stores the points, and student_id: 1 is team_one and student_id: 2 is team_two
             #probably need to use .update()
-            student = Student.where(id: current_user.id)
-            student.scores.find(2).team_score #hard coding to test
-            puts student.scores.find(2).team_score 
-
-
+            #student = Student.find(params[:student_id])
+            student = Student.find(2)
+            test = student.scores.find(2).team_score #hard coding to test
+            test = test + 1
+            puts test
             #in db, student.scores = nil
             #hm, its going to be somthing like student.scores.team_score
 
