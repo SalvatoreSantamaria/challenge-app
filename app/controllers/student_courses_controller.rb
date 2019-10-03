@@ -19,18 +19,22 @@ class StudentCoursesController < ApplicationController
             #student = Student.find(params[:student_id])
             student = Student.find(2)
             test = student.scores.find(2).team_score #hard coding to test. now do I save or just write this correctly?
-            test = test + 1
-            puts test
+            #can also access with student = Student.find(2).scores.find(2).team_score
+            # test = test + 1
+            # puts test
 
-            #in db, student.scores = nil
-            #hm, its going to be somthing like student.scores.team_score
+            points = Course.find(params[:course_id])
+            points = points.challenge_points
+            puts points
+            current_team_two_score = Student.find(2).scores.find(2).team_score #this works
 
-            #
-            #something here that added the points?
+            Score.update(2, team_score: (current_team_two_score + points))
+
+
             flash[:notice] = "You have successfully completed #{course_to_add.name}"
-            redirect_to current_user
+            redirect_to root_path
         else  
-            flash[:notice] = "Something was wrong with your enrollment"
+            flash[:notice] = "Something was wrong with the score update"
             redirect_to root_path
         end
     end
