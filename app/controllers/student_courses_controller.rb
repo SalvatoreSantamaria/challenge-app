@@ -18,9 +18,10 @@ class StudentCoursesController < ApplicationController
             #probably need to use .update()
             #student = Student.find(params[:student_id])
             student = Student.find(2)
-            test = student.scores.find(2).team_score #hard coding to test
+            test = student.scores.find(2).team_score #hard coding to test. now do I save or just write this correctly?
             test = test + 1
             puts test
+
             #in db, student.scores = nil
             #hm, its going to be somthing like student.scores.team_score
 
