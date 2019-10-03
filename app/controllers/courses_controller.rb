@@ -2,8 +2,14 @@ class CoursesController < ApplicationController #courses controller inheriting f
     
     skip_before_action :require_user
     
+    # def team_two_scoreboard
+    #     @team_two_scoreboard = Student.scores.find(2).team_score
+    # end
+
     def index #directs to app/views/courses/index.html.erb
         @courses = Course.all #this make this available to all of the views
+        #@team_two_scoreboard = Student.scores.find(2).team_score
+        @scores = Score.all
     end
 
     def new

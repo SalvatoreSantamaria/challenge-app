@@ -1,6 +1,10 @@
 <div class='row'>
     <div class='col s12 center-align'>
         <h3>Challenges</h3>
+        <% @scores.each do |score| %>
+            <%# how to access the actual team names? %>
+            <h6> Team <%= score.student_id %> Score: <%= score.team_score %> </h6> 
+        <% end %>
     </div>
 </div>
 
