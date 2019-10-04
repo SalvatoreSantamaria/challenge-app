@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
     #     send_data "univ_app/public/file.txt", type: "application/txt", x_sendfile: true
     # end 
 
-    def admin
+    def admin #i think I should get rid of this, and add this to the current_user as an if 
         puts current_user, 'is the current user ###############################################'
         if current_user.name = 'admin'
         @admin = current_user

@@ -14,5 +14,5 @@ class Student < ApplicationRecord
     
     #belongs_to :scores #this means student is the many side of a one to many association. i think this needs to be many to many, so changing to below
     has_many :scores
-    validates :student_id, presence: true #ensures that a student id is present
+    #validates :id, presence: true #ensures that a student id is present (don't need this! was breaking application, because id is auto-added)
 end

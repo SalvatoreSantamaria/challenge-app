@@ -33,7 +33,7 @@ class StudentCoursesController < ApplicationController
             Score.update(current_user.id, team_score: (current_team_two_score + points)) #unsure if current_user.id is correct - i might just be passing in the user id, and not the team id
 
 
-            flash[:notice] = "You have successfully completed #{course_to_add.name}"
+            flash[:notice] = "You have completed #{course_to_add.name}!"
             redirect_to root_path
         else  
             flash[:notice] = "Something was wrong with the score update"
