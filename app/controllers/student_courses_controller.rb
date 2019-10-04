@@ -17,21 +17,23 @@ class StudentCoursesController < ApplicationController
             #table is score, score.team_score stores the points, and student_id: 1 is team_one and student_id: 2 is team_two
             #probably need to use .update()
             #student = Student.find(params[:student_id])
-            student = Student.find(2)
-            test = student.scores.find(2).team_score #hard coding to test. now do I save or just write this correctly?
+            #student = Student.find(2)
+            #test = student.scores.find(2).team_score #hard coding to test. now do I save or just write this correctly?
             #can also access with student = Student.find(2).scores.find(2).team_score
             # test = test + 1
             # puts test
 
             points = Course.find(params[:course_id])
             points = points.challenge_points
-            puts points
-            current_team_two_score = Student.find(2).scores.find(2).team_score #this works
 
-            Score.update(2, team_score: (current_team_two_score + points))
+            #current_team_two_score = Student.find(2).scores.find(2).team_score #manual hard code, this works
+            puts current_user.id, "*********************************************"
+            #puts Student.find(current_user.id).scores.find(1).team_score, 'Student.find(current_user.id).scores.find(1).team_score '
+            current_team_two_score = Student.find(current_user.id).scores.find(current_user.id).team_score  #unsure if current_user.id is correct - i might just be passing in the user id, and not the team id
+            Score.update(current_user.id, team_score: (current_team_two_score + points)) #unsure if current_user.id is correct - i might just be passing in the user id, and not the team id
 
 
-            flash[:notice] = "You have successfully completed #{course_to_add.name}"
+            flash[:notice] = "You have completed #{course_to_add.name}!"
             redirect_to root_path
         else  
             flash[:notice] = "Something was wrong with the score update"

@@ -16,13 +16,20 @@ class ApplicationController < ActionController::Base
 
     def require_user #enforce pages and actions that require a (logged in) user
         if !logged_in? #ifnot logged in
-            flash[:notice] = "You must be loggin in to perform that action"
+            flash[:notice] = "You must be logged in to perform that action"
         redirect_to login_path#then redirect
         end
     end
 
-    def download_pdf
-        send_data "univ_app/public/file.txt", type: "application/txt", x_sendfile: true
-    end 
+    # def download_pdf
+    #     send_data "univ_app/public/file.txt", type: "application/txt", x_sendfile: true
+    # end 
+
+    def admin #i think I should get rid of this, and add this to the current_user as an if 
+        puts current_user, 'is the current user ###############################################'
+        if current_user.name = 'admin'
+        @admin = current_user
+        end
+    end
 
 end
