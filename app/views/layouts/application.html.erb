@@ -12,9 +12,10 @@
   <body>
     <%= render 'layouts/navigation' %>
     <main>
-      <div class="container">
+    <%# removing container, materialize is set to 70% %>
+      <%# <div class="container">  %>
         <%= yield %>
-      </div>
+      <%# </div> %>
     </main>
     <%= render 'layouts/footer' %>
   </body>

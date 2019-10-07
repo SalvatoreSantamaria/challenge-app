@@ -1,6 +1,6 @@
 <div class='row sign-up-form'>
     <div class='col s12 center-align'>
-        <h3>Student Directory</h3>
+        <h3>Directory</h3>
     </div>
 </div>
 
@@ -10,7 +10,7 @@
         <div class="card-content white-text">
             <span class="card-title">Name: <%=@student.name%></span>
             <p>Email: <%=@student.email%></p>
-            <p>Current enrollements:
+            <p>Completed Challenges:
                 <% if @student.courses.empty? %>
                     None
                 <% else %>
