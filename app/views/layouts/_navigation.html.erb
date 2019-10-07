@@ -33,6 +33,12 @@
         </ul>
         <ul class="sidenav" id="mobile-demo">
             <li><%= link_to "Challenges", root_path%></li>
+            <li><%= link_to 'New Challenges', courses_new_path %></li>
+            <li><%= session_link %></li>
+            <% if logged_in? %>
+                <li><%= link_to "View your profile", student_path(current_user) %></li>
+            <% end %>
+
             <%# <li><a href="#">Enrollment</a></li>
             <li><a href="#">Account</a></li> 
             <li><a class="dropdown-trigger2" href="#!" data-target="dropdown2">Account<i class="material-icons right"></i></a></li> %>
