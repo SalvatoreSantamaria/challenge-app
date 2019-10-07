@@ -27,7 +27,7 @@ class StudentCoursesController < ApplicationController
             points = points.challenge_points
 
             #current_team_two_score = Student.find(2).scores.find(2).team_score #manual hard code, this works
-            puts current_user.id, "*********************************************"
+            puts current_user.id, "*******************"
             #puts Student.find(current_user.id).scores.find(1).team_score, 'Student.find(current_user.id).scores.find(1).team_score '
             #here is where it fails rd::RecordNotFound (Couldn't find Score with 'id'=1 [WHERE "scores"."student_id" = $1]):
             current_team_two_score = Student.find(current_user.id).scores.find(current_user.id).team_score  #unsure if current_user.id is correct - i might just be passing in the user id, and not the team id
