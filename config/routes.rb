@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'courses#index' #courses controller, index action.
   get 'courses/new', to: 'courses#new' #goes to courses controller, new action
+  get 'courses/edit', to: 'courses#edit'
   get 'about', to: 'pages#about'
   resources :students, except: [:destroy]
   resources :courses
@@ -9,5 +10,8 @@ Rails.application.routes.draw do
   post 'login', to: 'logins#create' #handled by logins controller, create action
   delete 'logout', to: 'logins#destroy' #send request to logins controller, destroy action
   post 'course_enroll', to: 'student_courses#create' #post request to course enroll, to student_courses controller, create action
+  
+  delete 'course_destroy', to: 'student_courses#destroy' #request to course unenroll, to student_courses controller, unenroll action
+
   get 'download_pdf', to: "application#download_pdf"
 end
