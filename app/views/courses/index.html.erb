@@ -26,8 +26,8 @@
                 <%# #if logged_in and the current user already is enrolled in the course %>
                 <% if logged_in? && !(current_user.courses.include?(course))%> 
                 <%# have to specify method post (not using a form for helper) %>
-                    <h2><%= link_to "Done", course_enroll_path(course_id: course.id), method: :post %></h2> <%# passing in course_id param (one of the keys in the params hash) and the value of the id of the course%>
-                    <h2><%= link_to "Edit", edit_course_path(course)%></h2>
+                    <h2><%= link_to "Done", course_enroll_path(course_id: course.id), method: :post %><%= link_to "Edit", edit_course_path(course)%></h2> <%# passing in course_id param (one of the keys in the params hash) and the value of the id of the course%>
+
                 <% end %>
                     <%# <h2><%= link_to "Undo", course_destroy_path(course_id: course.id), method: :delete %><%# not working, controller not functioning. passing in course_id param (one of the keys in the params hash) and the value of the id of the course %>
 
