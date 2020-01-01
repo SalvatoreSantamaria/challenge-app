@@ -1,11 +1,16 @@
 <h1>Create a new challenge!</h1>
 
+<%# have to specify what obj is (for the shared errors partial) REMOVED %>
+
 <div class="container">
     <div class="row center sign-up-form">
         <div class="row center">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
+                    <%# if @student instance variable is a new record ? then :  %>
+                    <%# <h3><%= @student.new_record? ? "Create Your Profile" : "Edit your profile"%></h3>
                     <div class="row"> 
+                    <%# model backed forms allow grabbing database object based on the id of the student %>
                         <%= form_for(@course, html: {class: "col s12"}) do |f| %>
                             <div class="row">
                                 <div class= "input-field col s12">
@@ -16,21 +21,18 @@
 
                             <div class="row">
                                 <div class= "input-field col s12">
-                                    <%= f.text_field :description, placeholder: "Challenge Description", autofocus: true %>
-                                    <%= f.label :description, class: "active" %>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class= "input-field col s12">
                                     <%= f.number_field :challenge_points, placeholder: "Challenge Points", autofocus: true %>
                                     <%= f.label :challenge_points, class: "active" %>
                                 </div>
                             </div>
 
+
                             <div class="row">
                                 <div class= "input-field col s12">
-                                    <%= f.submit "Submit" %>
+                                <%# if @student instance variable is a new record %>
+                                <%# if is new record show sign up OTHERWISE ? show : submit changes %>
+                                    <%# <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit Changes'.html_safe, class: "btn light-blue waves-effect waves-light right" )%> 
+                                 <%= f.submit "Submit" %>
                                 </div>
                             </div>
                         <% end %>
