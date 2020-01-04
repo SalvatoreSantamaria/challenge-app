@@ -1,9 +1,9 @@
-class StudentchallengesController < ApplicationController 
+class TeamChallengesController < ApplicationController 
     def create
-        challenge_to_add = challenge.find(params[:challenge_id]) #find the challenge bases on challenge we are sending in
+        challenge_to_add = Challenge.find(params[:challenge_id]) #find the challenge bases on challenge we are sending in
         unless current_user.challenges.include?(challenge_to_add)#create association only ifcurrent user isnt already enrolled in couse
             #i think this is just creating the relationship.
-            Studentchallenge.create(challenge: challenge_to_add, student: current_user)#rails will extract id from here and use to in the association
+            TeamChallenge.create(challenge: challenge_to_add, student: current_user)#rails will extract id from here and use to in the association
             #create will hit the db directly
 
 
