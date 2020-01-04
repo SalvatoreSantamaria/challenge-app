@@ -1,4 +1,4 @@
 class TeamChallenge < ApplicationRecord
-    belongs_to :student
+    belongs_to :team
     belongs_to :challenge
 end

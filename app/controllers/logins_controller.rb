@@ -6,11 +6,11 @@ class LoginsController < ApplicationController
     end
 
     def create
-        student = Student.find_by(email: params[:logins][:email].downcase) #grab the student
-        if student && student.authenticate(params[:logins][:password]) #ifstudent exists
-            session[:student_id] = student.id   #set session variable
+        team = Team.find_by(email: params[:logins][:email].downcase) #grab the team
+        if team && team.authenticate(params[:logins][:password]) #ifteam exists
+            session[:team_id] = team.id   #set session variable
             flash[:notice] = "You have successfully loggen in"
-            redirect_to student
+            redirect_to team
         else  
             flash.now[:notice] = "Something was wrong with you login information" #.now will show just on page and then leave, will not store for redirect
             render 'new'
@@ -18,7 +18,7 @@ class LoginsController < ApplicationController
     end
 
     def destroy
-        session[:student_id] = nil
+        session[:team_id] = nil
         flash[:notice] = "You have successfully logged out"
         redirect_to root_path
     end
