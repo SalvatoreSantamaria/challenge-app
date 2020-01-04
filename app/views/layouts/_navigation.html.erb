@@ -4,7 +4,7 @@
     <ul id="dropdown1" class="dropdown-content">
     <li><%= session_link %></li>
     <% if logged_in? %>
-        <li><%= link_to "View your profile", student_path(current_user)%></li>
+        <li><%= link_to "View your profile", team_path(current_user)%></li>
     <% end %>
     <li class="divider"></li>
  
@@ -12,7 +12,7 @@
     <ul id="dropdown2" class="dropdown-content">
     <li><%= session_link %></li>
     <% if logged_in? %>
-        <li><%= link_to "View your profile", student_path(current_user) %></li>
+        <li><%= link_to "View your profile", team_path(current_user) %></li>
     <% end %>
     <li class="divider"></li>
     <li><a href="#!">three</a></li>
@@ -27,7 +27,7 @@
             <ul id="nav-mobile" class="">
                 <li><%= link_to 'Challenges', root_path %></li>
                 <% if logged_in? %>
-                    <li><%= link_to 'Users', students_path %></li>
+                    <li><%= link_to 'Users', teams_path %></li>
                 <% end %>
                 <li><%= link_to 'New Challenges', challenges_new_path %></li>
                 <!-- Dropdown Trigger -->
@@ -41,7 +41,7 @@
                 <li class=><%= link_to 'Logout', logout_path %></li>
                 <%# <li><%= session_link %>
                 <%# <% if logged_in? %> 
-                    <%# <li><%= link_to "View your profile", student_path(current_user) </li> %>
+                    <%# <li><%= link_to "View your profile", team_path(current_user) </li> %>
                 <%# <% end %> 
             </ul>
 

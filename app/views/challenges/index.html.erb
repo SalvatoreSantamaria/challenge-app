@@ -3,7 +3,7 @@
         <%# <h2>Challenges</h2> %>
         <% @scores.each do |score| %>
             <%# how to access the actual team names? %>
-            <h2> Team <%= score.student_id %> Score: <%= score.team_score %> </h2> 
+            <h2> Team <%= score.team_id %> Score: <%= score.team_score %> </h2> 
         <% end %>
     </div>
 </div>
@@ -18,8 +18,8 @@
                 <h4> Points: <%=challenge.challenge_points%></h2>
             </div>
             <div>
-                <%# Team One Completed? <%=challenge.student_challenges%> <%# needs to go in controller
-                <%# Team Two Completed? <%=challenge.find(params[:challenge_id]).student_challenges.student_id = 2%>
+                <%# Team One Completed? <%=challenge.team_challenges%> <%# needs to go in controller
+                <%# Team Two Completed? <%=challenge.find(params[:challenge_id]).team_challenges.team_id = 2%>
                 
             </div>
             <div class="card-action">

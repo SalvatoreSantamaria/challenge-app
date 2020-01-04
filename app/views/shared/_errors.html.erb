@@ -8,7 +8,7 @@
                         <%= pluralize(obj.errors.count, "error")%>
                         Prohibited your profile from being created
                         <ul>
-                        <%@student.errors.full_messages.each do |message| %>
+                        <%@team.errors.full_messages.each do |message| %>
                             <li><%= message %>
                             <% end %>
                         </ul>

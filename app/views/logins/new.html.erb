@@ -3,10 +3,10 @@
         <div class="row center">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
-                    <%# if @student instance variable is a new record ? then :  %>
+                    <%# if @team instance variable is a new record ? then :  %>
                     <h3>Login</h3>
                     <div class="row"> 
-                    <%# model backed forms allow grabbing database object based on the id of the student %>
+                    <%# model backed forms allow grabbing database object based on the id of the team %>
                         <%= form_for(:logins, html: {class: "col s12"}) do |f| %>
                         
                             <div class="row">
@@ -23,7 +23,7 @@
                             </div>
                             <div class="row">
                                 <div class= "input-field col s12">
-                                <%# if @student instance variable is a new record %>
+                                <%# if @team instance variable is a new record %>
                                 <%# if is new record show sign up OTHERWISE ? show : submit changes %>
                                     <%= f.button '<i class="material-icons right">arrow_forward</i>Log In'.html_safe , class: "btn light-blue waves-effect waves-light right" %>
                                 </div>

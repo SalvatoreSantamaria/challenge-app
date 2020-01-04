@@ -7,10 +7,10 @@
         <div class="row center">
             <div class="col s12 m12 l12">
                 <div class="card-panel">
-                    <%# if @student instance variable is a new record ? then :  %>
-                    <%# <h3><%= @student.new_record? ? "Create Your Profile" : "Edit your profile"%></h3>
+                    <%# if @team instance variable is a new record ? then :  %>
+                    <%# <h3><%= @team.new_record? ? "Create Your Profile" : "Edit your profile"%></h3>
                     <div class="row"> 
-                    <%# model backed forms allow grabbing database object based on the id of the student %>
+                    <%# model backed forms allow grabbing database object based on the id of the team %>
                         <%= form_for(@challenge, html: {class: "col s12"}) do |f| %>
                             <div class="row">
                                 <div class= "input-field col s12">
@@ -29,9 +29,9 @@
 
                             <div class="row">
                                 <div class= "input-field col s12">
-                                <%# if @student instance variable is a new record %>
+                                <%# if @team instance variable is a new record %>
                                 <%# if is new record show sign up OTHERWISE ? show : submit changes %>
-                                    <%# <%= f.button(@student.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit Changes'.html_safe, class: "btn light-blue waves-effect waves-light right" )%> 
+                                    <%# <%= f.button(@team.new_record? ? '<i class="material-icons right">arrow_forward</i>Sign Up'.html_safe : '<i class="material-icons right">arrow_forward</i>Submit Changes'.html_safe, class: "btn light-blue waves-effect waves-light right" )%> 
                                  <%= f.submit "Update" %>
                                 </div>
                             </div>
