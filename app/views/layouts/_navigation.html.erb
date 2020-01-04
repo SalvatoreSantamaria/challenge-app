@@ -20,7 +20,7 @@
     <nav>
         <div class="container">
             <div class="nav-wrapper">
-            <%#= link_to 'New Challenges', courses_new_path, class: "brand-logo center" %>
+            <%#= link_to 'New Challenges', challenges_new_path, class: "brand-logo center" %>
             <%#= link_to "Challenges", root_path, class: "brand-logo right" %>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             
@@ -29,14 +29,14 @@
                 <% if logged_in? %>
                     <li><%= link_to 'Users', students_path %></li>
                 <% end %>
-                <li><%= link_to 'New Challenges', courses_new_path %></li>
+                <li><%= link_to 'New Challenges', challenges_new_path %></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right"></i></a></li>
             </ul>
 
             <ul class="sidenav" id="mobile-demo">
                 <li class=><%= link_to "Challenges", root_path%></li>
-                <li class=><%= link_to 'New Challenges', courses_new_path %></li>
+                <li class=><%= link_to 'New Challenges', challenges_new_path %></li>
                 <li class=><%= link_to 'Login', login_path %></li>
                 <li class=><%= link_to 'Logout', logout_path %></li>
                 <%# <li><%= session_link %>
