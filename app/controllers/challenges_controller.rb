@@ -1,19 +1,19 @@
-class CoursesController < ApplicationController #courses controller inheriting from app controller
+class challengesController < ApplicationController #challenges controller inheriting from app controller
     
     skip_before_action :require_user
-    before_action :set_course, only: [:show, :edit, :update]
+    before_action :set_challenge, only: [:show, :edit, :update]
     # def team_two_scoreboard
     #     @team_two_scoreboard = Student.scores.find(2).team_score
     # end
 
-    def index #directs to app/views/courses/index.html.erb
-        @courses = Course.all #this make this available to all of the views
+    def index #directs to app/views/challenges/index.html.erb
+        @challenges = challenge.all #this make this available to all of the views
         #@team_two_scoreboard = Student.scores.find(2).team_score
         @scores = Score.all
     end
 
     def new
-        @course = Course.new
+        @challenge = challenge.new
     end
 
     def show
@@ -23,8 +23,8 @@ class CoursesController < ApplicationController #courses controller inheriting f
     end
 
     def create
-        @course = Course.new(course_params)
-        if @course.save
+        @challenge = challenge.new(challenge_params)
+        if @challenge.save
             flash[:sucess] = "You have successfully added a challenge" #display a message
             redirect_to root_path
         else 
@@ -34,9 +34,9 @@ class CoursesController < ApplicationController #courses controller inheriting f
     end
 
     def update
-        @course = Course.find(params[:id])
+        @challenge = challenge.find(params[:id])
         # using student params to white list
-        if @course.update(course_params)
+        if @challenge.update(challenge_params)
             flash[:sucess] = "You have successfully update your profile"
             # redirect_to student_path(@student) #this could also be redirect_to @student
             redirect_to root_path
@@ -52,12 +52,12 @@ class CoursesController < ApplicationController #courses controller inheriting f
 
     private
 
-    def course_params
-        params.require(:course).permit(:name, :challenge_points) #this will whitelist what we receive for the web form, name and email
+    def challenge_params
+        params.require(:challenge).permit(:name, :challenge_points) #this will whitelist what we receive for the web form, name and email
     end
 
-    def set_course
-        @course = Course.find(params[:id])
+    def set_challenge
+        @challenge = challenge.find(params[:id])
     end
 
 end

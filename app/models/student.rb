@@ -8,8 +8,8 @@ class Student < ApplicationRecord
         format: {with: VALID_EMAIL_REGEX}
     has_secure_password
     
-    has_many :student_courses
-    has_many :courses, through: :student_courses #link that connects in model - give a relation with course, but not directly, through student_courses
+    has_many :student_challenges
+    has_many :challenges, through: :student_challenges #link that connects in model - give a relation with challenge, but not directly, through student_challenges
     
     
     #belongs_to :scores #this means student is the many side of a one to many association. i think this needs to be many to many, so changing to below
