@@ -5,6 +5,6 @@ class Challenge < ApplicationRecord
     # validates :short_name, presence: true, length: {minimum: 3, maximum: 15}
     # validates :name, presence: true, length: {minimum: 10, maximum: 300}
 
-    has_many :student_challenges
-    has_many :students, through: :student_challenges #link that connects in model - give a relation with student, but not directly, through student_challenges
+    has_many :team_challenges
+    has_many :teams, through: :team_challenges #link that connects in model - give a relation with team, but not directly, through team_challenges
 end

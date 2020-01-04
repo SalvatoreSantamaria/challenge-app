@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user, :logged_in?
     def current_user #in a method so we can always refer to a current user 
-        @current_user ||= Student.find(session[:student_id]) if session[:student_id] # ifthis is set, then it finds student from session hash ifsession :student_id and assign it to @current_user. now there is a logged in user 
-        #|| arefor memoization. the student query will only be performed ifthe @current_user does not exist
+        @current_user ||= Team.find(session[:team_id]) if session[:team_id] # ifthis is set, then it finds team from session hash ifsession :team_id and assign it to @current_user. now there is a logged in user 
+        #|| arefor memoization. the team query will only be performed ifthe @current_user does not exist
     end
 
     def logged_in?
