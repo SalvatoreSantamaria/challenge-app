@@ -1,4 +1,4 @@
-class challengesController < ApplicationController #challenges controller inheriting from app controller
+class ChallengesController < ApplicationController #challenges controller inheriting from app controller
     
     skip_before_action :require_user
     before_action :set_challenge, only: [:show, :edit, :update]
@@ -7,13 +7,13 @@ class challengesController < ApplicationController #challenges controller inheri
     # end
 
     def index #directs to app/views/challenges/index.html.erb
-        @challenges = challenge.all #this make this available to all of the views
+        @challenges = Challenge.all #this make this available to all of the views
         #@team_two_scoreboard = Student.scores.find(2).team_score
         @scores = Score.all
     end
 
     def new
-        @challenge = challenge.new
+        @challenge = Challenge.new
     end
 
     def show
@@ -23,7 +23,7 @@ class challengesController < ApplicationController #challenges controller inheri
     end
 
     def create
-        @challenge = challenge.new(challenge_params)
+        @challenge = Challenge.new(challenge_params)
         if @challenge.save
             flash[:sucess] = "You have successfully added a challenge" #display a message
             redirect_to root_path
@@ -34,7 +34,7 @@ class challengesController < ApplicationController #challenges controller inheri
     end
 
     def update
-        @challenge = challenge.find(params[:id])
+        @challenge = Challenge.find(params[:id])
         # using student params to white list
         if @challenge.update(challenge_params)
             flash[:sucess] = "You have successfully update your profile"
