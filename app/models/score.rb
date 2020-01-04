@@ -4,5 +4,5 @@ class Score < ApplicationRecord
     # validates :short_name, presence: true, length: {minimum: 3, maximum: 15}
     # validates :name, presence: true, length: {minimum: 10, maximum: 300}
 
-    has_many :students #students is teams. 
+    has_many :teams #students is teams. 
 end
