@@ -57,7 +57,7 @@ class ChallengesController < ApplicationController #challenges controller inheri
     end
 
     def set_challenge
-        @challenge = challenge.find(params[:id])
+        @challenge = Challenge.find(params[:id])
     end
 
 end
