@@ -24,11 +24,14 @@
             </div>
             <div class="card-action">
                 <%# #if logged_in and the current user already is enrolled in the challenge %>
-                <% if logged_in? && !(current_user.challenges.include?(challenge))%> 
+                <%#THIS IS BROKEN. Looking to figure this line out!%>
+
+                <%# if logged_in? && !(current_user.challenges.include?(challenge))%> 
+
                 <%# have to specify method post (not using a form for helper) %>
                     <h2><%= link_to "Done", challenge_enroll_path(challenge_id: challenge.id), method: :post %><%= link_to "Edit", edit_challenge_path(challenge)%></h2> <%# passing in challenge_id param (one of the keys in the params hash) and the value of the id of the challenge%>
 
-                <% end %>
+                <%# end %>
                     <%# <h2><%= link_to "Undo", challenge_destroy_path(challenge_id: challenge.id), method: :delete %><%# not working, controller not functioning. passing in challenge_id param (one of the keys in the params hash) and the value of the id of the challenge %>
 
                     <%# <a href="#">Complete</a> %>

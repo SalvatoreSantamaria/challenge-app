@@ -37,7 +37,7 @@ class ChallengesController < ApplicationController #challenges controller inheri
         @challenge = Challenge.find(params[:id])
         # using team params to white list
         if @challenge.update(challenge_params)
-            flash[:sucess] = "You have successfully update your profile"
+            flash[:sucess] = "You have successfully updated"
             # redirect_to team_path(@team) #this could also be redirect_to @team
             redirect_to root_path
         else
