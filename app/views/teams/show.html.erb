@@ -11,15 +11,16 @@
             <span class="card-title">Name: <%=@team.name%></span>
             <p>Email: <%=@team.email%></p>
             <p>Completed Challenges:
-                <% if @team.challenges.empty? %>
+            <%# error here  %>
+                <%# <% if @team.challenges.empty? %>
                     None
-                <% else %>
+                <%# <% else %> %> %>
                     <ul>
                         <% @team.challenges.each do |challenge| %>
                             <li><%= challenge.name %></li>
                         <% end %>
                     </ul>
-                    <% end %>
+                    <%# <% end %> %>
                 </p>
             </div>
         </div>

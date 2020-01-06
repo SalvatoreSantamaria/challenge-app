@@ -23,7 +23,7 @@ class TeamChallengesController < ApplicationController
             # test = test + 1
             # puts test
 
-            points = challenge.find(params[:challenge_id])
+            points = Challenge.find(params[:challenge_id])
             points = points.challenge_points
 
             #current_team_two_score = Team.find(2).scores.find(2).team_score #manual hard code, this works
