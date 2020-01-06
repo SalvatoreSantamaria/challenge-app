@@ -5,7 +5,7 @@
 </div>
 
 <div class="row">
-    <% @students.each do |s| %>
+    <% @teams.each do |s| %>
         <div class="col s6 m6">
             <div class="card blue-grey darken-1">
             <div class="card-content white-text">
@@ -14,7 +14,7 @@
                 <p>Completed Challenges</p>
             </div>
             <div class="card-action">
-                <%= link_to "View profile", student_path(s) %>
+                <%= link_to "View profile", team_path(s) %>
             </div>
             </div>
         </div>
