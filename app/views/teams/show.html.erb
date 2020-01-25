@@ -1,6 +1,7 @@
 <div class='row sign-up-form'>
     <div class='col s12 center-align'>
         <h3>Directory</h3>
+                <p>Put the team challenges in here</p>
     </div>
 </div>
 
@@ -14,19 +15,19 @@
             <%# error here  %>
                 <%# <% if @team.challenges.empty? %>
                     None
-                <%# <% else %> %> %>
+                <%# <% else %> 
                     <ul>
                         <% @team.challenges.each do |challenge| %>
                             <li><%= challenge.name %></li>
                         <% end %>
                     </ul>
-                    <%# <% end %> %>
+                    <%# <% end %> 
                 </p>
             </div>
         </div>
         <%# if the current user is the same as the team on this page, show the link %>
         <% if current_user == @team %> 
-            <%= link_to '<i class="material-icons right">cloud</i>Edit your profile'.html_safe, edit_team_path(@team), class:"waves-effect waves-light btn"%>
+            <%= link_to 'Edit your profile', edit_team_path(@team), class:"waves-effect waves-light btn"%>
         <% end %>
     </div>
 </div>

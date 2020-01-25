@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_06_040609) do
+ActiveRecord::Schema.define(version: 2020_01_25_155104) do
 
   create_table "challenges", force: :cascade do |t|
     t.string "short_name"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2020_01_06_040609) do
     t.integer "team_one_points_total"
     t.integer "team_two_points_total"
     t.integer "challenge_points"
+    t.integer "team_id"
   end
 
   create_table "points", force: :cascade do |t|

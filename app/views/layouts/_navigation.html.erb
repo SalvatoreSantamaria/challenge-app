@@ -32,11 +32,13 @@
                 <li><%= link_to 'New Challenges', challenges_new_path %></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right"></i></a></li>
+                <li class=><%= link_to 'New User', new_team_path %></li>
             </ul>
 
             <ul class="sidenav" id="mobile-demo">
                 <li class=><%= link_to "Challenges", root_path%></li>
                 <li class=><%= link_to 'New Challenges', challenges_new_path %></li>
+                
                 <li class=><%= link_to 'Login', login_path %></li>
                 <li class=><%= link_to 'Logout', logout_path %></li>
                 <%# <li><%= session_link %>
