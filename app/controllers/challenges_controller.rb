@@ -24,6 +24,9 @@ class ChallengesController < ApplicationController #challenges controller inheri
 
     def create
         @challenge = Challenge.new(challenge_params)
+        puts "challenge_params are #{challenge_params}"
+        #currently no user id is incoming in the params. where do i get it from?
+        #need to update the challenge database with the user id
         if @challenge.save
             flash[:sucess] = "You have successfully added a challenge" #display a message
             redirect_to root_path
