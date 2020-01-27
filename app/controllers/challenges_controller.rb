@@ -56,7 +56,7 @@ class ChallengesController < ApplicationController #challenges controller inheri
     private
 
     def challenge_params
-        params.require(:challenge).permit(:name, :challenge_points) #this will whitelist what we receive for the web form, name and email
+        params.require(:challenge).permit(:name, :description, :team_id, :challenge_points) #this will whitelist what we receive for the web form, name and email
     end
 
     def set_challenge
