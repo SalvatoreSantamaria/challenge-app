@@ -8,10 +8,12 @@ class TeamsController < ApplicationController
 
     def index
         @teams = Team.all
+        
     end
 
     def show
-        
+        @scores = Score.all
+        @challenges = Challenge.all
     end
 
     def new

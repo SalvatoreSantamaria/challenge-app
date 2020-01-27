@@ -2,6 +2,7 @@ class Challenge < ApplicationRecord
     #course is  challenges, to update
     validates :name, presence: true, length: {minimum: 1, maximum: 240}
     validates :challenge_points, presence: true, numericality: { only_integer: true }
+    # validates :team_id, presence: true
     # validates :short_name, presence: true, length: {minimum: 3, maximum: 15}
     # validates :name, presence: true, length: {minimum: 10, maximum: 300}
 
